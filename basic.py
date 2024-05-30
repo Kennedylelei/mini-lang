@@ -60,7 +60,7 @@ class Lexer:
 
     def advance(self):
         self.pos += 1
-        self.current_char = self.text[pos] if self.pos < len(self.text) else None
+        self.current_char = self.text[self.pos] if self.pos < len(self.text) else None
 
     def make_tokens(self):
         tokens = []
@@ -112,7 +112,11 @@ class Lexer:
         else:
             return Token(TT_FLOAT, float(num_str))
         
-# RUN
+
+
+#############################
+#   RUN
+#############################
 
 def run(text):
     lexer = Lexer(text)
