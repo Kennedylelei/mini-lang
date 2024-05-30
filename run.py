@@ -2,7 +2,7 @@ import mini
 import time
 import sys
 
-file_name = 'rand.mini'
+file_name = 'test.mini'
 
 # get the file name from the user as a command line argument
 #file_name = sys.argv[1]
@@ -28,7 +28,8 @@ def run_lexer():
     if error:
         print(error.as_string())
     else:
-        print(result)
+        for token in result:
+            print(token)
 
 
 def run_parser():
@@ -62,29 +63,31 @@ def run_icg():
 
 # Calculate Run Time
 lexer_start_time = time.time()
-
+print("===============================================================================================")
 run_lexer()
 
 lexer_finish_time = time.time()
 
 lexer_total_run_time = lexer_finish_time - lexer_start_time
-print("=====================================================================")
+print("===============================================================================================")
 print("\n", file_name, "Mini Lexer runs in:",
-      lexer_total_run_time, "seconds\n\n")
+      lexer_total_run_time, "seconds")
+print("===============================================================================================")
+print("\n\n")
 
 parser_start_time = time.time()
-
+print("\n\n")
+print("===============================================================================================")
 run_parser()
 
 parser_finish_time = time.time()
 
 parser_total_run_time = parser_finish_time - parser_start_time
-print("=====================================================================")
 print("\n", file_name, "Mini Parser runs in:",
-      parser_total_run_time, "seconds\n\n")
+      parser_total_run_time, "seconds")
 
 icg_start_time = time.time()
-
+print("===============================================================================================")
 run_icg()
 
 icg_finish_time = time.time()
