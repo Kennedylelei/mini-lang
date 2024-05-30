@@ -1,0 +1,3 @@
+WHILE (x / 2) < 8 THEN
+    VAR y = y + 1
+END

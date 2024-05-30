@@ -1,0 +1,32 @@
+VAR x = 5
+VAR y = 10.5
+VAR z = "Hello, world!"
+
+FUN add(a, b) 
+  VAR result = a + b
+  RETURN result
+END
+
+VAR sum = add(x, y)
+
+FUN get_sum(product)
+  IF sum > 15 THEN
+    WHILE x < 10 THEN
+        VAR x = x + 1
+    END
+  ELIF sum > 10 THEN
+    FOR i = 1 TO 5 THEN
+      VAR product = x * i
+      IF product < 10 THEN
+        VAR product = product - 1
+        CONTINUE
+      END
+      IF product > 10 THEN
+        VAR product = product + 1
+        BREAK
+      END
+    END
+  ELSE
+    VAR product = 0
+  END
+END
