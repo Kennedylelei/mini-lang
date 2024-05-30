@@ -1,11 +1,5 @@
 from strings_with_arrows import *
 
-"""
-    Error class:
-        This handles the erros
-
-"""
-
 
 class Error:
     def __init__(self, pos_start, pos_end, error_name, details):

@@ -79,18 +79,3 @@ def run_intermediate_code_generator(fn, text):
     icg = IntermediateCodeGenerator(ast.node)
 
     return icg.generate_intermediate_code(), ast.error
-
-#######################################
-# RUN
-#######################################
-
-def run(fn, text):
-    lexer = Lexer(fn, text)
-    tokens, error = lexer.make_tokens()
-    if error: return None, error
-
-    # Generate AST
-    parser = Parser(tokens)
-    ast = parser.parse()
-
-    return ast.node, ast.error
