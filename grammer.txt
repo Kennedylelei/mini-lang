@@ -1,0 +1,89 @@
+# Identifiers
+
+<identifier> ::= <first_char> ( <char>* | '_'* )
+<char> ::= <letter_uppercase> | <letter_lowercase> | <combination_titlecase> | <combination_camelcase>
+<letter_uppercase> ::= "A" ... "Z"
+<letter_lowercase> ::= "a" ... "z"
+<combination_titlecase> ::= "A...Z""a...z"
+<combination_camelcase> ::= "A"..."Z""a"..."z""A"..."Z""a"..."z" | "a"..."z""A"..."Z""a"..."z"
+
+# Numbers
+
+<number> ::= <digit> | <float>
+<digit> ::= "0" | "1" | ... | "9"
+<float> ::= <digit> . <digit>
+
+
+# Variables
+<expression> ::= <arithmetic_expression> | <comparison_expression> | <assignment_expression> | <variable_expression> | <logical_expression>
+<variable_expression> ::= VAR <identifier> <assignment_operator> <expression>
+
+
+# Keywords
+
+VAR 
+AND
+OR
+NOT
+IF 
+THEN 
+ELIF
+ELSE 
+FOR 
+TO 
+WHILE 
+FUN 
+END 
+RETURN 
+CONTINUE 
+BREAK
+END
+EOF
+
+
+# Strings
+
+<string> ::= '"' <char>* '"' 
+<char> ::= any printable ASCII character except double quote (") or new
+     line ('\n')
+
+
+# Operators
+
+<arithmetic_operator> ::= "+" | "-" | "*" | "/" 
+<comparison_operator> ::= "<" | ">" | "=" | "<=" | ">=" | "!="
+<logical_operator> ::= AND | OR | NOT
+
+# Declarations
+<statements> ::= NEWLINE <statement> 
+<statement> ::= RETURN <expression> | CONTINUE | BREAK | <expression>
+
+<expression> ::= <arithmetic_expression> | <comparison_expression> | <assignment_expression> | <variable_expression> | <logical_expression>
+
+
+# Expressions
+    # Arithmetic expression
+        <arithmetic_expression> ::= <term> | [<term> "+"| "-"<term>]
+        <term> ::= <factor> "*"|"/"
+        <factor> ::= "+"| "-" <factor> | <power>
+        <power> ::= <atom> ("^" <factor>) 
+        <atom> ::= <number> | <identifier> | <string> | "(" <expression> ")" | <if_then> | <while_then> | <for_to> | <function_definition>
+
+    # Comparison expression
+        <comparison_expression>::= <arithmetic_expression> <comparison_operator> <arithmetic_expression>
+
+    # Assignment expression
+        <assignment_operator> ::= <identifier> "=" <number> | <string>
+    
+    # Logical expression
+        <logical_expression> ::= <comparison_expression> | NOT <comparison_expression>
+
+# Control Structures
+    # While ... Then     
+        <while_then> ::= WHILE <expression> THEN <statement>
+    # If ... Then
+        <if_then> ::= IF <expression> THEN <statement> | <else_if> | <else>
+        <else_if> ::= ELIF <expression> THEN <statement> | <else_if> | <else>
+        <else> ::= ELSE <statement>
+    # For ... To
+        <for_to> ::= FOR <identifier> EQ <expression> TO <expression> [ STEP <expression> THEN <statement>] | THEN <statement>
