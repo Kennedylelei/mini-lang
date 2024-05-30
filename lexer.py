@@ -1,4 +1,6 @@
 from constants import *
+from error import IllegalCharError
+from position import *
 
 """
     This file contains the following:
