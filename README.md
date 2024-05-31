@@ -15,7 +15,6 @@ The code for the lexer is found in its entirety in the basic.py file, specifical
 
 Developed by [Nesta Mwangi](https://github.com/Eazynesta), [Kennedy Kithaka], [Gregory Adung'o] and [Kennedy Lelei](https://github.com/kennedylelei).
 
-
 ## Mini Language - Intermediate Code Generator
 
 Developed by [Nesta Mwangi](https://github.com/Eazynesta), [Kennedy Kithaka], [Gregory Adung'o] and [Kennedy Lelei](https://github.com/kennedylelei).
